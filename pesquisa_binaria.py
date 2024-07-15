@@ -8,20 +8,25 @@ def pesquisa_binaria(lista, item):
     alto = len(lista) - 1 #4
     
     while baixo <= alto:
-        meio = (baixo + alto) / 2
-        print(meio)
-        chute = lista[int(meio)] #2
         
-        if chute == item:
+        meio = (baixo + alto) // 2 #2 o // é divisão inteira, para não resultar em um float 
+        print(f"meio: {meio}")
+        chute = lista[meio] #lista[2] chute: 5
+        
+        if chute == item: #false
             return meio
         
-        if chute > item:
-            alto = meio - 1 #1
+        if chute > item: #true
+            alto = meio - 1 # 4 - 2 = 1
             
-        else:
+        else: 
             baixo = meio + 1
+            
             
     
 minha_lista = [1,3,5,7,9]
-print(pesquisa_binaria(minha_lista, 3))
-print(pesquisa_binaria(minha_lista, 19))
+print(f"Endereço do item: {pesquisa_binaria(minha_lista, 3)}")
+print(f"Endereço do item: {pesquisa_binaria(minha_lista, 19)}")
+print(f"Endereço do item: {pesquisa_binaria(minha_lista, 7)}")
+
+\
